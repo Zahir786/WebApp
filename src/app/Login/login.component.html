@@ -1,0 +1,185 @@
+<div class="container-fluid vh-100">
+  <div class="row h-100">
+    <div class="col-lg-8 col-md-6 d-none d-md-block h-100">
+      <img class="w-100 h-100 mw-100 mh-100" src="assets/images/login.png" alt="branding logo"
+        style="object-fit: scale-down;">
+    </div>
+    <div class="col-lg-4 col-md-6" style="background-color: var(--card-bg);">
+      <div class="h-100 d-flex align-items-center justify-content-center" style="background-color: var(--card-bg);">
+        <div class="card mb-0">
+          <div class="text-center"><img src="assets/images/logo.png" height="75"></div>
+          <div class="pt-2 pb-1">
+            <h3 class="text-title text-center">Property Z Plus</h3>
+          </div>
+          <div class="card-content">
+            <div class="card-body">
+              <form class="mb-2" #loginForm="ngForm">
+                <div class="form-group mb-3">
+                  <label class="">User Name/Email</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                          class="bi bi-envelope" viewBox="0 0 16 16">
+                          <path
+                            d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z" />
+                        </svg>
+                      </span>
+                    </div>
+                    <input class="form-control" name="user_email" type="email" #loginEmail="ngModel"
+                      [(ngModel)]="User.email" placeholder="User Name" required
+                      [ngClass]="{'is-invalid':loginEmail.invalid && (loginEmail.dirty  || loginEmail.touched), 'is-valid':loginEmail.valid && (loginEmail.dirty  || loginEmail.touched)}">
+                  </div>
+                  <div *ngIf="loginEmail.invalid && (loginEmail.dirty || loginEmail.touched)" class="text-danger">
+                    <div *ngIf="loginEmail.errors.required">
+                      User Name/Email is Required
+                    </div>
+                    <div *ngIf="loginEmail.errors.pattern">
+                      Enter Valid User Name/Email.
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group mb-3">
+                  <label class="" for="exampleInputPassword1">Password</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                          class="bi bi-key" viewBox="0 0 16 16">
+                          <path
+                            d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z" />
+                          <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                        </svg>
+                      </span>
+                    </div>
+                    <input appRestrictCopyPaste class="form-control" name="password" type="password"
+                      #loginPassword="ngModel" [(ngModel)]="User.password" placeholder="password" required minlength="3"
+                      [ngClass]="{'is-invalid':loginPassword.invalid && (loginPassword.dirty  || loginPassword.touched), 'is-valid':loginPassword.valid && (loginPassword.dirty  || loginPassword.touched)}">
+                    <div appViewPassword class="input-group-append password-ip-icon">
+                      <button type="button" class="input-group-text">
+                        <i class="bi bi-eye"></i>
+                        <i class="bi bi-eye-slash"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div *ngIf="loginPassword.invalid && (loginPassword.dirty || loginPassword.touched)"
+                    class="text-danger">
+                    <div *ngIf="loginPassword.errors.required">
+                      Password is Required
+                    </div>
+                    <div *ngIf="loginPassword.errors.minlength">
+                      Password Should be minimum 3 character.
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group d-flex flex-md-row flex-column justify-content-between align-items-center">
+                  <div class="text-left">
+                  </div>
+                  <div class="text-right"><a [routerLink]="['/ForgotPassword']" class="card-link"><small>Forgot
+                        Password?</small></a></div>
+                </div>
+                <button type="submit" class="aunthetication-btn btn btn-primary rounded position-relative w-100"
+                  [disabled]="!loginForm.form.valid" (click)="Login()">Login
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                    class="bi bi-arrow-right-short position-absolute" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                  </svg>
+                </button>
+              </form>
+              <div class="p-2 text-center">
+                All Rights Reserved. Property Z Plus
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <section class="row d-flex justify-content-center align-items-center vh-100">
+    <div class="col-xl-7 col-md-9 col-10 px-0">
+        <div class="card mb-0">
+            <div class="row m-0">
+                <div class="col-md-6 col-12 px-0 align-self-center">
+                    <div class="card mb-0 p-3">
+                        <div class="pt-2 pb-1">
+                            <h3 class="text-title text-center">LightPe</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-body">
+                                <form class="mb-2" #loginForm="ngForm">
+                                    <div class="form-group mb-3">
+                                        <label class="">User Name/Email</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">
+                                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                                                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
+                                                  </svg>
+                                                </span>
+                                            </div>
+                                            <input class="form-control" name="user_email" type="email" #loginEmail="ngModel" [(ngModel)]="User.email" placeholder="User Name" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required [ngClass]="{'is-invalid':loginEmail.invalid && (loginEmail.dirty  || loginEmail.touched), 'is-valid':loginEmail.valid && (loginEmail.dirty  || loginEmail.touched)}">
+                                        </div>
+                                        <div *ngIf="loginEmail.invalid && (loginEmail.dirty || loginEmail.touched)" class="text-danger">
+                                            <div *ngIf="loginEmail.errors.required">
+                                                User Name/Email is Required
+                                            </div>
+                                            <div *ngIf="loginEmail.errors.pattern">
+                                                Enter Valid User Name/Email.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label class="" for="exampleInputPassword1">Password</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">
+                                                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-key" viewBox="0 0 16 16">
+                                                    <path d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z"/>
+                                                    <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                                                  </svg>
+                                                </span>
+                                            </div>
+                                            <input appRestrictCopyPaste class="form-control" name="password" type="password" #loginPassword="ngModel" [(ngModel)]="User.password" placeholder="password" required minlength="3" [ngClass]="{'is-invalid':loginPassword.invalid && (loginPassword.dirty  || loginPassword.touched), 'is-valid':loginPassword.valid && (loginPassword.dirty  || loginPassword.touched)}">
+                                            <div appViewPassword class="input-group-append password-ip-icon">
+                                                <button type="button" class="input-group-text">
+                                                  <i class="bi bi-eye lead"></i>
+                                                  <i class="bi bi-eye-slash lead"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div *ngIf="loginPassword.invalid && (loginPassword.dirty || loginPassword.touched)" class="text-danger">
+                                            <div *ngIf="loginPassword.errors.required">
+                                                Password is Required
+                                            </div>
+                                            <div *ngIf="loginPassword.errors.minlength">
+                                                Password Should be minimum 3 character.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group d-flex flex-md-row flex-column justify-content-between align-items-center">
+                                        <div class="text-left">
+                                        </div>
+                                        <div class="text-right"><a [routerLink]="['/ForgotPassword']" class="card-link"><small>Forgot Password?</small></a></div>
+                                    </div>
+                                    <button type="button" class="aunthetication-btn btn btn-primary rounded position-relative w-100" [disabled]="!loginForm.form.valid" (click)="Login()">Login
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right-short position-absolute" viewBox="0 0 16 16">
+                                      <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+                                    </svg>
+                                  </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-2 text-center">
+                        Copyright &#xa9; 2021 LightPe. All rights reserved
+                    </div>
+                </div>
+                <div class="col-md-6 aunthetication-img-bg-color d-md-block d-none text-center py-3 position-relative">
+                    <img class="img-fluid position-absolute" src="assets/images/login.png" alt="branding logo">
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->

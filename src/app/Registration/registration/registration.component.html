@@ -1,0 +1,103 @@
+<div class="card">
+  <div class="p-3">
+    <h4 class="header-title m-0">Registration Information</h4>
+  </div>
+  <hr class="m-0">
+  <div class="card-body pb-0">
+    <div class="row" [formGroup]="registrationForm">
+      <div class="col-4 form-group">
+        <label>First Name <span class="text-danger"> * </span></label>
+        <input type="text" class="form-control" formControlName="first_name" [(ngModel)]="registrationData.first_name"
+          aria-describedby="mail-icon">
+        <app-validation propertyName="first_name" [MessageArray]="registrationValidationMessages"
+          [FormGroupName]="registrationForm"></app-validation>
+      </div>
+      <div class="col-4 form-group">
+        <label>Last Name <span class="text-danger"> * </span></label>
+        <input type="text" class="form-control" formControlName="last_name" [(ngModel)]="registrationData.last_name"
+          aria-describedby="mail-icon">
+        <app-validation propertyName="last_name" [MessageArray]="registrationValidationMessages"
+          [FormGroupName]="registrationForm"></app-validation>
+      </div>
+      <div class="col-4 form-group">
+        <label>Email <span class="text-danger"> * </span></label>
+        <input type="text" class="form-control" formControlName="email" [(ngModel)]="registrationData.email"
+          aria-describedby="mail-icon">
+        <app-validation propertyName="email" [MessageArray]="registrationValidationMessages"
+          [FormGroupName]="registrationForm"></app-validation>
+      </div>
+      <div class="col-4 form-group">
+        <label>Phone No <span class="text-danger"> * </span></label>
+        <input type="text" class="form-control" formControlName="phone_no" [(ngModel)]="registrationData.phone_no"
+          aria-describedby="mail-icon">
+        <app-validation propertyName="phone_no" [MessageArray]="registrationValidationMessages"
+          [FormGroupName]="registrationForm"></app-validation>
+      </div>
+      <div class="col-4 form-group">
+        <label>marital_status <span class="text-danger"> * </span></label>
+        <p-dropdown [filter]="true" formControlName="marital_status" [options]="MaritusStatusdropdown"
+          optionLabel="name" optionValue="id" placeholder="Select State" [(ngModel)]="registrationData.marital_status"
+          [ngClass]="getValClass(fc.marital_status)" [(ngModel)]="this.registrationData.marital_status"></p-dropdown>
+        <app-validation propertyName="marital_status" [MessageArray]="registrationValidationMessages"
+          [FormGroupName]="registrationForm"></app-validation>
+      </div>
+      <div class="col-4 form-group">
+        <label>Address <span class="text-danger"> * </span></label>
+        <input type="text" class="form-control" formControlName="address" [(ngModel)]="registrationData.address"
+          aria-describedby="mail-icon">
+        <app-validation propertyName="address" [MessageArray]="registrationValidationMessages"
+          [FormGroupName]="registrationForm"></app-validation>
+      </div>
+      <div class="col-4 form-group">
+        <label>State <span class="text-danger"> * </span></label>
+        <p-dropdown [filter]="true" formControlName="marital_status" [options]="Statedropdown" optionLabel="name"
+          optionValue="id" placeholder="Select State" [(ngModel)]="registrationData.marital_status"
+          [ngClass]="getValClass(fc.marital_status)" [(ngModel)]="this.registrationData.marital_status"></p-dropdown>
+        <app-validation propertyName="marital_status" [MessageArray]="registrationValidationMessages"
+          [FormGroupName]="registrationForm"></app-validation>
+      </div>
+      <div class="col-4 form-group">
+        <label>Pin Code <span class="text-danger"> * </span></label>
+        <input type="text" class="form-control" formControlName="zip_code" [(ngModel)]="registrationData.zip_code"
+          aria-describedby="mail-icon">
+        <app-validation propertyName="zip_code" [MessageArray]="registrationValidationMessages"
+          [FormGroupName]="registrationForm"></app-validation>
+      </div>
+      <!-- <div class="col-6 form-group">
+        <label>Message <span class="text-danger"> * </span></label>
+        <textarea type="text" class="form-control" formControlName="message" [(ngModel)]="registrationData.message"
+          aria-describedby="mail-icon"></textarea>
+        <app-validation propertyName="message" [MessageArray]="registrationValidationMessages"
+          [FormGroupName]="registrationForm"></app-validation>
+      </div> -->
+
+
+    </div>
+  </div>
+  <div class="row align-items-center mb-2 mx-2">
+    <div class="col-md-6">
+      <span class="text-danger">*</span>&nbsp;<strong>Indicate mandatory fields</strong>
+    </div>
+    <div class="col-md-6 text-right">
+      <button type="button" class="btn btn-danger mr-3" routerLink="/registrationList">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle"
+          viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+        </svg>
+        <span class="align-middle ml-1">Cancel</span>
+      </button>
+      <button type="button" class="btn btn-success" (click)="Save()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-circle"
+          viewBox="0 0 16 16">
+          <path
+            d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z" />
+          <path
+            d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z" />
+        </svg>
+        <span class="align-middle ml-1">{{ registrationId == 0 ? 'Save': 'Update' }}</span>
+      </button>
+    </div>
+  </div>
+</div>

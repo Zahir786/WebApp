@@ -1,0 +1,217 @@
+<!-- <div class="card">
+  <div class="p-3">
+    <h4 class="header-title m-0">Dashboard</h4>
+  </div>
+  <hr class="m-0">
+  <div class="card-body pb-0">
+    <div class="row">
+      <div class="col-6 form-group">
+        <label>Lab <span class="text-danger"> * </span></label>
+        <p-dropdown [filter]="true" [options]="Labdropdown" optionLabel="name" optionValue="id" placeholder="Select Lab"
+          [(ngModel)]="lab_id" (onChange)="labChangeEvent($event.value)"></p-dropdown>
+      </div>
+      <div class="col-3 form-group">
+        <label>Date <span class="text-danger"> * </span></label>
+        <p-calendar appendTo="body" dateFormat="dd-mm-yy" [monthNavigator]="true" [yearNavigator]="true"
+          yearRange="2000:2100" [(ngModel)]="Date"></p-calendar>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3 form-group">
+        <label>From Date <span class="text-danger"> * </span></label>
+        <p-calendar appendTo="body" dateFormat="dd-mm-yy" [monthNavigator]="true" [yearNavigator]="true"
+          yearRange="2000:2100" [(ngModel)]="From_date"></p-calendar>
+      </div>
+      <div class="col-3 form-group">
+        <label>To Date <span class="text-danger"> * </span></label>
+        <p-calendar appendTo="body" dateFormat="dd-mm-yy" [monthNavigator]="true" [yearNavigator]="true"
+          yearRange="2000:2100" [(ngModel)]="To_date"></p-calendar>
+      </div>
+      <div class="col-3 form-group">
+        <button type="button" class="btn btn-success" (click)="Submit()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-circle"
+            viewBox="0 0 16 16">
+            <path
+              d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z" />
+            <path
+              d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z" />
+          </svg>
+          <span class="align-middle ml-1">Submit</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+  <hr />
+  <div class="row" *ngIf="this.lab_id > 0">
+    <div class="col-md-6">
+      <div class="card card-chart">
+        <div class="card">
+          <div class="card-body">
+            <div class="row" *ngIf="Lab_Total > 0">
+              <div class="col-6">
+                <div>
+                  <b>System-PC</b>
+                </div>
+                <div>
+                  Healthy percentage : <b>100%</b>
+                </div>
+                <div>
+                  Health Radio : <b>{{Lab_Total}}</b>
+                </div>
+              </div>
+              <div class="col-6">
+                <p-chart type="pie" [data]="Labdata" [options]="LabchartOptions" [style]="{'width': '40%'}"></p-chart>
+              </div>
+            </div>
+            <hr *ngIf="Router_Total > 0">
+            <div class="row" *ngIf="Router_Total > 0">
+              <div class="col-6">
+                <div>
+                  <b>Routers</b>
+                </div>
+                <div>
+                  Healthy percentage : <b>100%</b>
+                </div>
+                <div>
+                  Headth Radio : <b>{{Router_Total}}</b>
+                </div>
+              </div>
+              <div class="col-6">
+                <p-chart type="pie" [data]="Routerdata" [options]="LabchartOptions"
+                  [style]="{'width': '40%'}"></p-chart>
+              </div>
+            </div>
+            <hr *ngIf="Switch_Total > 0">
+            <div class="row" *ngIf="Switch_Total > 0">
+              <div class="col-6">
+                <div>
+                  <b>Switches</b>
+                </div>
+                <div>
+                  Healthy percentage : <b>100%</b>
+                </div>
+                <div>
+                  Headth Radio : <b>{{Switch_Total}}</b>
+                </div>
+              </div>
+              <div class="col-6">
+                <p-chart type="pie" [data]="Switchdata" [options]="chartOptions" [style]="{'width': '40%'}"></p-chart>
+              </div>
+            </div>
+            <hr *ngIf="Hosts_Total > 0">
+            <div class="row" *ngIf="Hosts_Total > 0">
+              <div class="col-6">
+                <div>
+                  <b>Access Points</b>
+                </div>
+                <div>
+                  Healyhy percentage : <b>100%</b>
+                </div>
+                <div>
+                  Headth Radio : <b>{{Hosts_Total}}</b>
+                </div>
+              </div>
+              <div class="col-6">
+                <p-chart type="pie" [data]="Hostsdata" [options]="chartOptions" [style]="{'width': '40%'}"></p-chart>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card card-chart">
+        <div class="card">
+          <div class="card-body" *ngIf="Sysyem_date.length > 0">
+            <div class="row">
+              <div class="col-6">
+                <div style="text-align: center;">
+                  <b>System-PC</b>
+                  <br />
+                  {{Lab_Total}}
+                </div>
+              </div>
+              <div class="col-6">
+                <div style="text-align: center;">
+                  <b>Health Level</b>
+                  <br />
+                  100%
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <p-chart type="line" [data]="LabLinedata" [options]="basicOptions"></p-chart>
+            </div>
+          </div>
+          <hr *ngIf="Router_date.length > 0" />
+          <div class="card-body" *ngIf="Router_date.length > 0">
+            <div class="row">
+              <div class="col-6">
+                <div style="text-align: center;">
+                  <b>Routers</b>
+                  <br />
+                  {{Router_Total}}
+                </div>
+              </div>
+              <div class="col-6">
+                <div style="text-align: center;">
+                  <b>Health Level</b>
+                  <br />
+                  100%
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <p-chart type="line" [data]="RouterLinedata" [options]="basicOptions"></p-chart>
+            </div>
+          </div>
+          <hr *ngIf="Switch_date.length > 0" />
+          <div class="card-body" *ngIf="Switch_date.length > 0">
+            <div class="row">
+              <div class="col-6">
+                <div style="text-align: center;">
+                  <b>Switches</b>
+                  <br />
+                  {{Switch_Total}}
+                </div>
+              </div>
+              <div class="col-6">
+                <div style="text-align: center;">
+                  <b>Health Level</b>
+                  <br />
+                  100%
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <p-chart type="line" [data]="SwitchLinedata" [options]="basicOptions"></p-chart>
+            </div>
+          </div>
+          <hr *ngIf="Hosts_date.length > 0" />
+          <div class="card-body" *ngIf="Hosts_date.length > 0">
+            <div class="row">
+              <div class="col-6">
+                <div style="text-align: center;">
+                  <b>Hosts</b>
+                  <br />
+                  {{Hosts_Total}}
+                </div>
+              </div>
+              <div class="col-6">
+                <div style="text-align: center;">
+                  <b>Health Level</b>
+                  <br />
+                  100%
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <p-chart type="line" [data]="HostsLinedata" [options]="basicOptions"></p-chart>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->

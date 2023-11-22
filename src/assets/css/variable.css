@@ -1,0 +1,199 @@
+/* Body variable */
+
+:root {
+  --body-bg: #fbfbfb;
+  --body-color: #7e7e7e;
+  --text-main-title: #323a46;
+  --text-title: #000000;
+  --text-muted: #98a6ad;
+  --title-header: #343a40;
+  /* TOP NAV */
+  --top-nav-bg: #ffffff;
+  --top-nav-color: #363062;
+  --top-nav-shadow: 0 0 35px 0 rgba(154, 161, 171, .15);
+  --top-nav-logo-bg: var(--top-nav-bg);
+  /* SIDE NAV */
+  --side-nav-bg: #ffffff;
+  --side-nav-shadow: 0 15px 30px 0 rgb(0 0 0 / 2%);
+  --side-nav-link-color: #7e7e7e;
+  --side-nav-link-hover-color: #363062;
+  --condence-side-nav-link-bg: #f3f7f9;
+  --condence-side-nav-link-shadow: inset 3px 5px 10px 0 rgba(154, 161, 171, .2);
+  /* COPYRIGHT FOOTER */
+  --footer-bg: #fbfbfb;
+  --footer-color: var(--text-muted);
+  /* AUTNENTICATION PAGE */
+  --auth-page-img-bg-color: #F2F4F4;
+  /* Buttons */
+  --btn-pri-bg: #363062;
+  --btn-pri-hover-bg: #282348;
+  --btn-pri-hover-bor: #231f40;
+  --btn-pri-shdw: 0 0 0 0.2rem rgb(84 79 122 / 50%);
+
+  --btn-sec-bg: #ac4cbc;
+  --btn-sec-hover-bg: #963da4;
+  --btn-sec-hover-bor: #8d3a9b;
+  --btn-sec-shdw: 0 0 0 0.2rem rgb(184 103 198 / 50%);
+
+  --btn-suc-bg: #68cf29;
+  --btn-suc-hover-bg: #58af23;
+  --btn-suc-hover-bor: #53a421;
+  --btn-suc-shdw: 0 0 0 0.2rem rgb(93 182 41 / 50%);
+
+  --btn-dan-bg: #f72b50;
+  --btn-dan-hover-bg: #f30933;
+  --btn-dan-hover-bor: #e60931;
+  --btn-dan-shdw: 0 0 0 0.2rem rgb(248 75 106 / 50%);
+
+  --btn-war-bg: #ffab2d;
+  --btn-war-color: #212529;
+  --btn-war-hover-bg: #ff9c07;
+  --btn-war-hover-bor: #f99500;
+  --btn-war-shdw: 0 0 0 0.2rem rgb(222 151 44 / 50%);
+
+  --btn-info-bg: #3a82ef;
+  --btn-info-hover-bg: #176cec;
+  --btn-info-hover-bor: #1266e4;
+  --btn-info-shdw: 0 0 0 0.2rem rgb(88 149 241 / 50%);
+
+  /* TABLE */
+  --table-color: #7e7e7e;
+  --table-b-color: #d7dae3;
+  --tbl-stripe-bg: #f2f4fa;
+  --pagi-btn-bg: #ffffff;
+  --pagi-btn-hover-bg: #363062;
+  --pagi-btn-color: #6e6e6e;
+  --pagi-btn-hover-color: #ffffff;
+  /* INPUT */
+  --ip-b-color: #d7dae3;
+  --ip-color: #6e6e6e;
+  --ip-bg-color: #fff;
+  --ip-placeholder-color: #adb5bd;
+  --ip-hover-b-color: #b1bbc4;
+  --ip-group-text-bg: #f7f7f7;
+  --ip-group-text-color: var(--body-color);
+  --select-arrow-color: rgb(108, 117, 125);
+  /* CHECKBOX */
+  --checkbox-border: #adb5bd;
+  --checkbox-bg-color: var(--ip-bg-color);
+  /* CARD */
+  --card-bg: #fff;
+  --card-shadow: 0 0 13px 0 rgb(82 63 105 / 5%);
+  --card-b-color: #f7f7f7;
+  /* DROPDOWN MENU */
+  --dropdown-menu-color: #6c757d;
+  --dropdown-menu-shadow: 0 0 35px 0 rgba(154, 161, 171, .15);
+  --dropdown-menu-bg: #fff;
+  --dropdown-menu-border: 1px solid #e9f0f4;
+  --dropdown-menu-hover-color: #272e37;
+  --dropdown-menu-hover-bg: #f3f7f9;
+  --dropdown-divider-b-rder-color: #f7f7f7;
+  --dropdown-search-bg-color: #ffffff;
+  --dropdown-arrow-color: #6c757d;
+  /* MODAL */
+  --modal-header-bg: #f3f7f9;
+  /* CALENDER */
+  --calender-active-bg: #edeff1;
+  --calender-active-color: #343a40;
+  --calender-hover-color: #343a40;
+  --calender-hover-bg: #dae6ec;
+  --calender-today-bg: #6c757d;
+  --calender-today-color: #ffffff;
+  /* PRIMENG TAB */
+  --tab-nav-color: #dee2e6;
+  --tab-nav-bg: transparent;
+  --tab-nav-active-color: #6c757d;
+  --tab-nav-active-bg: #ffffff;
+  --tab-nav-active-border-color: #6658dd;
+  /* --tab-nav-border-color: rgba(152, 166, 173, .2); */
+  --tab-nav-border-color: #98a6ad33;
+  /* PRIMENG RICH TEXT EDITOR */
+  --editor-header-bg: rgb(237, 239, 241);
+  --editor-border: 1px solid rgb(206, 212, 218);
+  --editor-editor-bg: #fff;
+  --editor-editor-color: #6c757d;
+  --editor-header-btn-color: rgb(52, 58, 64);
+}
+
+:root .dark {
+  --body-bg: #05031a;
+  --body-color: #828690;
+  --text-main-title: #f3f7f9;
+  --text-title: #ffffff;
+  --text-muted: #8c98a5;
+  --title-header: #acbfd2;
+  /* TOP NAV */
+  --top-nav-bg: #14112e;
+  --top-nav-color: #ffffff;
+  --top-nav-shadow: 0 0 35px 0 rgba(66, 72, 80, .15);
+  --top-nav-logo-bg: #14112e;
+  --condence-side-nav-link-bg: #37424c;
+  --condence-side-nav-link-shadow: none;
+  /* SIDE NAV */
+  --side-nav-bg: #14112e;
+  --side-nav-shadow: 0 15px 30px 0 rgb(0 0 0 / 2%);
+  --side-nav-link-color: #b3b3b3;
+  --side-nav-link-hover-color: #ffffff;
+  /* COPYRIGHT FOOTER */
+  --footer-bg: #05031a;
+  --footer-color: var(--text-muted);
+  /* AUTNENTICATION PAGE */
+  --auth-page-img-bg-color: #161A22;
+  /* TABLE */
+  --table-color: #7e7e7e;
+  --table-b-color: #2a2833;
+  --tbl-stripe-bg: #05031a;
+  --pagi-btn-bg: transparent;
+  /* --pagi-btn-hover-bg: #424e5a; */
+  --pagi-btn-color: #828690;
+  /* --pagi-btn-hover-color: #f3f7f9; */
+  /* INPUT */
+  --ip-b-color: #2a2833;
+  --ip-color: #fff;
+  --ip-bg-color: #05031a;
+  --ip-placeholder-color: #586877;
+  --ip-hover-b-color: #475461;
+  --ip-group-text-bg: #36404a;
+  --ip-group-text-color: var(--body-color);
+  --select-arrow-color: rgb(148, 160, 173);
+  /* CHECKBOX */
+  --checkbox-border: #5d7186;
+  --checkbox-bg-color: var(--ip-bg-color);
+  /* CARD */
+  --card-bg: #14112e;
+  --card-shadow: none;
+  --card-b-color: #36404a;
+  /* DROPDOWN MENU */
+  --dropdown-menu-color: #7e7e7e;
+  --dropdown-menu-bg: #05031a;
+  --dropdown-menu-shadow: 0 0 0 1px hsl(0deg 0% 100% / 10%);
+  --dropdown-menu-border: 1px solid #1e1b37;
+  --dropdown-menu-hover-color: #7e7e7e;
+  --dropdown-menu-hover-bg: #14112e;
+  --dropdown-divider-b-rder-color: #475461;
+  --dropdown-search-bg-color: #05031a;
+  --dropdown-arrow-color: #94a0ad;
+  /* MODAL */
+  --modal-header-bg: #424e5a;
+  /* CALENDER */
+  --calender-active-bg: #4d5b69;
+  --calender-active-color: #f7f7f7;
+  --calender-hover-color: #fff;
+  --calender-hover-bg: #323b44;
+  --calender-today-bg: #cedeef;
+  --calender-today-color: #36404a;
+  /* PRIMENG TAB */
+  --tab-nav-color: #dee2e6;
+  --tab-nav-bg: transparent;
+  --tab-nav-active-color: #dee2e6;
+  --tab-nav-active-bg: #424e5a;
+  --tab-nav-active-border-color: #6658dd;
+  /* --tab-nav-border-color: rgba(206, 222, 239, .2); */
+  --tab-nav-border-color: #cedeef33;
+  /* PRIMENG RICH TEXT EDITOR */
+  --editor-header-bg: #424e5a;
+  --editor-border: 1px solid #424e5a;
+  --editor-editor-bg: #3b4651;
+  --editor-editor-color: #94a0ad;
+  --editor-header-btn-color: #f3f7f9;
+}

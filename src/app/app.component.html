@@ -1,0 +1,10 @@
+<div id="spinnerloading" style="display: none;" class="spinner_overlay">
+    <div id="spinnerloadingimage" class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+
+<p-toast></p-toast>
+<!-- <p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="99999" rejectButtonStyleClass="p-button-text"></p-confirmDialog> -->
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>
+<router-outlet></router-outlet>

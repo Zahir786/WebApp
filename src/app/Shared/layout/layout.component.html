@@ -1,0 +1,159 @@
+<div id="wrapper">
+  <div class="navbar-custom">
+    <ul class="list-unstyled topnav-menu float-right mb-0">
+      <li class="lead">
+        <h3 class="my-0 mx-2" style="line-height: 70px;"><span class="badge badge-success">{{appVertion}}</span></h3>
+      </li>
+      <li class="dropdown">
+        <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light theme-btn" href="javascript:void(0)"
+          (click)="changeTheme()">
+          <i class="bi bi-brightness-high-fill lead"></i>
+          <i class="bi bi-moon lead"></i>
+        </a>
+      </li>
+      <li class="dropdown notification-list">
+        <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#"
+          role="button" aria-haspopup="false" aria-expanded="false">
+          <span class="pro-user-name">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+              class="bi bi-person-circle" viewBox="0 0 16 16">
+              <path
+                d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z" />
+              <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+              <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z" />
+            </svg>
+            <!-- {{ helper.GetCurrentCompany() }} -->
+            <span class="ml-1">{{ helper.GetUserInfo().first_name }}</span>
+            <i class="mdi mdi-chevron-down"></i>
+          </span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right profile-dropdown">
+          <!-- <a href="javascript:void(0);" class="dropdown-item notify-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                        <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                      </svg>
+                        <span>My Account</span>
+                    </a> -->
+          <a href="javascript:void(0);" class="dropdown-item notify-item" (click)="ChangePassword()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-key"
+              viewBox="0 0 16 16">
+              <path
+                d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z" />
+              <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+            </svg>
+            <span>Change Password</span>
+          </a>
+          <div class="dropdown-divider px-2"></div>
+          <a href="javascript:void(0);" (click)="Logout()" class="dropdown-item notify-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
+              <path fill-rule="evenodd"
+                d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+            </svg>
+            <span>Logout</span>
+          </a>
+
+
+        </div>
+      </li>
+
+    </ul>
+    <!-- LOGO -->
+    <div class="logo-box">
+      <a class="logo text-center w-100 h-100">
+        <span class="logo-lg w-100 h-100">
+          <!-- <img src="assets/images/umar_logo.png" alt="" style="height: -webkit-fill-available; height: 100%; width: auto;"> -->
+          <img src="assets/images/logo.png" alt="" style="height: 70px;" class="rounded" width="75%">
+        </span>
+        <span class="logo-sm w-100 h-100">
+          <img src="assets/images/favicon.png" alt="" class="rounded" height="auto" width="80%">
+        </span>
+      </a>
+    </div>
+    <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
+      <li>
+        <!-- <button class="button-menu-mobile waves-effect waves-light"><i class="bi bi-list"></i></button> -->
+        <div class="button-menu-mobile d-flex justify-content-center align-items-center">
+          <div class="hamburger">
+            <span class="line"></span><span class="line"></span><span class="line"></span>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="left-side-menu">
+    <div class="slimscroll-menu">
+      <div id="sidebar-menu">
+        <ul class="metismenu" id="side-menu">
+          <ng-container *ngFor="let item of Menu">
+            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"
+              *ngIf="item.RouterLink.length > 0">
+              <a [routerLink]="[ '/' + item.RouterLink] " [routerLinkActive]="['active']">
+                <i [class]="item.Icon + ' text-red'"></i>
+                <span>{{item.Label}}</span>
+              </a>
+            </li>
+
+            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"
+              *ngIf="item.RouterLink.length == 0">
+              <a href="javaScript:void(0);">
+                <i [class]="item.Icon"></i>
+                <span>{{item.Label}}</span>
+                <span class="menu-arrow"></span>
+              </a>
+              <ul class="nav-second-level" aria-expanded="false">
+                <ng-container *ngFor="let childitem of item.ChildMenu">
+                  <li [routerLinkActive]="['leftmenuactive']" [routerLinkActiveOptions]="{exact:true}">
+                    <a [routerLink]="[ '/' + childitem.RouterLink] ">
+                      {{childitem.Label}}
+                    </a>
+                  </li>
+                </ng-container>
+              </ul>
+            </li>
+          </ng-container>
+          <li>
+            <a href="javaScript:void(0);" (click)="Logout()"><i
+                class="bi bi-box-arrow-right"></i><span>Logout</span></a>
+          </li>
+        </ul>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  <div class="content-page">
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="afterhedaer">
+              <div>
+                <!-- <ol class="breadcrumb m-0">
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">{{insertSpaces(helper.CurrentPage[0])}}</a></li>
+                                    <li class="breadcrumb-item" *ngIf="helper.CurrentPage[2]"><a [routerLink]="[ '/' + helper.CurrentPage[0] + '/' + helper.CurrentPage[2]]">{{insertSpaces(helper.CurrentPage[2])}}</a></li>
+                                    <li class="breadcrumb-item active" *ngIf="!helper.CurrentPage[1].includes('List')">{{insertSpaces(helper.CurrentPage[1])}}</li>
+                                </ol> -->
+              </div>
+            </div>
+            <div>
+              <router-outlet></router-outlet>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col text-center">
+            All Rights Reserved. Property Z Plus
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+<!-- <p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog> -->

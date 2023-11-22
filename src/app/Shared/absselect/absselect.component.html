@@ -1,0 +1,19 @@
+<div class="dropdown">
+    <div class="dropdown-toggle inputDropdown position-relative" data-bs-toggle="dropdown" aria-expanded="false">
+        <input class="form-control bg-white" readonly [(ngModel)]='dropDownInputModel'>
+        <span class="dropdownBtnIcon position-absolute d-flex"><i class="fas fa-sort-down"></i></span>
+    </div>
+    <div class="dropdown-menu">
+        <li class="p-2">
+            <div class="dropMenuSearchBox position-relative">
+                <input type="text" class="form-control" placeholder="search" [(ngModel)]="searchdata">
+                <span class="inputSearchIcon position-absolute d-flex">
+                <i class="fas fa-search text-placeholder"></i>
+              </span>
+            </div>
+        </li>
+        <ul class="pullDownList list-unstyled mb-0 mt-2">
+            <li *ngFor="let item of data | filterBy : searchkey : searchdata" class="dropdown-item" [class.active]="dropDownInputValueModel == item[drpvalue]" (click)="selectValue(item)">{{item[lable]}}</li>
+        </ul>
+    </div>
+</div>
