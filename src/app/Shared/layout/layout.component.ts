@@ -36,7 +36,11 @@ export class LayoutComponent implements OnInit, AfterViewInit, AfterViewChecked,
       { Module: "Admin", Label: "Dashboard", RouterLink: "/Dashboard", Icon: "bi bi-house-door-fill", Visiable: true },
       { Module: "Admin", Label: "User", RouterLink: "/UserList", Icon: "fas fa-user-plus", Visiable: true },
       { Module: "Admin", Label: "Enquiry", RouterLink: "/EnquiryList", Icon: "fas fa-user-plus", Visiable: true },
-      { Module: "Admin", Label: "Registration", RouterLink: "/RegistrationList", Icon: "fas fa-user-plus", Visiable: true },
+      { Module: "Admin", Label: "Staff", RouterLink: "/StaffList", Icon: "fas fa-user-plus", Visiable: true },
+      { Module: "Admin", Label: "Custmer", RouterLink: "/CustomerList", Icon: "fas fa-user-plus", Visiable: true },
+      { Module: "Admin", Label: "Product & Service", RouterLink: "/ProductList", Icon: "fas fa-user-plus", Visiable: true },
+      { Module: "Admin", Label: "Porperty Document", RouterLink: "/PorpertyDocumentList", Icon: "fas fa-user-plus", Visiable: true },
+      // { Module: "Admin", Label: "Registration", RouterLink: "/RegistrationList", Icon: "fas fa-user-plus", Visiable: true },
 
 
       {
@@ -44,6 +48,8 @@ export class LayoutComponent implements OnInit, AfterViewInit, AfterViewChecked,
 
           { Module: "Admin", Label: "User Role", RouterLink: "/UserRoleList", Icon: "fas fa-user-plus", Visiable: true },
           { Module: "Admin", Label: "State", RouterLink: "/StateList", Icon: "fas fa-user-plus", Visiable: true },
+          { Module: "Admin", Label: "Property", RouterLink: "/PropertyList", Icon: "fas fa-user-plus", Visiable: true },
+
 
 
 

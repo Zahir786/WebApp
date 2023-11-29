@@ -1,6 +1,6 @@
 <div class="card">
   <div class="p-3">
-    <h4 class="header-title m-0">Registration Information</h4>
+    <h4 class="header-title m-0">Staff Information</h4>
   </div>
   <hr class="m-0">
   <div class="card-body">
@@ -13,7 +13,7 @@
             <path
               d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
           </svg>
-          <span class="ml-1 align-middle">Add Registration</span>
+          <span class="ml-1 align-middle">Add Staff</span>
         </button>
       </div>
       <div class="col-sm-12 col-md-4">
@@ -26,9 +26,9 @@
         </div>
       </div>
     </div>
-    <p-table #usertable [columns]="Columns" [value]="registrationList" [showCurrentPageReport]="true"
-      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [responsive]="true" [lazy]="true"
-      [totalRecords]="TotalRecord" (onLazyLoad)="loadLazy($event)" [paginator]="true" [rows]="10">
+    <p-table #usertable [columns]="Columns" [value]="staffList" [paginator]="true" [rows]="5"
+      [showCurrentPageReport]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+      [rowsPerPageOptions]="[5,10,20,50,100]" [responsive]="true">
       <ng-template pTemplate="header" let-columns>
         <tr>
           <th *ngFor="let col of Columns" [pSortableColumn]="col.field">

@@ -1,6 +1,6 @@
 <div class="card">
   <div class="p-3">
-    <h4 class="header-title m-0">Registration Information</h4>
+    <h4 class="header-title m-0">PorpertyDocument Information</h4>
   </div>
   <hr class="m-0">
   <div class="card-body">
@@ -13,7 +13,7 @@
             <path
               d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
           </svg>
-          <span class="ml-1 align-middle">Add Registration</span>
+          <span class="ml-1 align-middle">Add PorpertyDocument</span>
         </button>
       </div>
       <div class="col-sm-12 col-md-4">
@@ -26,7 +26,7 @@
         </div>
       </div>
     </div>
-    <p-table #usertable [columns]="Columns" [value]="registrationList" [showCurrentPageReport]="true"
+    <p-table #usertable [columns]="Columns" [value]="PorpertyDocumentList" [showCurrentPageReport]="true"
       currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [responsive]="true" [lazy]="true"
       [totalRecords]="TotalRecord" (onLazyLoad)="loadLazy($event)" [paginator]="true" [rows]="10">
       <ng-template pTemplate="header" let-columns>

@@ -43,7 +43,7 @@
           <td *ngFor="let col of columns">
             <!-- {{rowData | GetArrayValue : col }} -->
             <div *ngIf="col.field != 'primary'">
-              <span class="ui-column-title">{{col.header}}</span> {{rowData | GetArrayValue : col }}
+              <span class="ui-column-title"></span> {{rowData | GetArrayValue : col }}
             </div>
             <div *ngIf="col.field == 'primary'">
               <span class="badge bg-soft-success text-success" *ngIf="rowData.primary == 1">Yes</span>

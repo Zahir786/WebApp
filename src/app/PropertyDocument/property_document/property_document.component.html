@@ -1,0 +1,98 @@
+<div class="card">
+  <div class="p-3">
+    <h4 class="header-title m-0">Porperty Document Information</h4>
+  </div>
+  <hr class="m-0">
+  <div class="card-body pb-0">
+    <div class="row" [formGroup]="PorpertyDocumentForm">
+      <div class="col-4 form-group">
+        <label>Date <span class="text-danger"> * </span></label>
+        <p-calendar appendTo="body" formControlName="date" dateFormat="dd-mm-yy" [monthNavigator]="true"
+          [yearNavigator]="true" yearRange="2000:2050" [(ngModel)]="PorpertyDocumentData.date"></p-calendar>
+        <app-validation propertyName="date" [MessageArray]="PorpertyDocumentValidationMessages"
+          [FormGroupName]="PorpertyDocumentForm"></app-validation>
+      </div>
+      <div class="col-4 form-group">
+        <label>Document No <span class="text-danger"> * </span></label>
+        <input type="text" class="form-control" formControlName="document_no"
+          [(ngModel)]="PorpertyDocumentData.document_no" aria-describedby="mail-icon">
+        <app-validation propertyName="document_no" [MessageArray]="PorpertyDocumentValidationMessages"
+          [FormGroupName]="PorpertyDocumentForm"></app-validation>
+      </div>
+      <div class="col-4 form-group">
+        <label>Property <span class="text-danger"> * </span></label>
+        <p-dropdown [filter]="true" formControlName="property_id" [options]="Propertydropdown" optionLabel="name"
+          optionValue="id" placeholder="Select State" [(ngModel)]="PorpertyDocumentData.property_id"
+          [ngClass]="getValClass(fc.property_id)" [(ngModel)]="this.PorpertyDocumentData.property_id"></p-dropdown>
+        <app-validation propertyName="property_id" [MessageArray]="PorpertyDocumentValidationMessages"
+          [FormGroupName]="PorpertyDocumentForm"></app-validation>
+      </div>
+      <div class="col-4 form-group">
+        <label>Customer <span class="text-danger"> * </span></label>
+        <p-dropdown [filter]="true" formControlName="customer_id" [options]="Customerdropdown" optionLabel="first_name"
+          optionValue="id" placeholder="Select Customer" [(ngModel)]="PorpertyDocumentData.customer_id"
+          [ngClass]="getValClass(fc.customer_id)" [(ngModel)]="this.PorpertyDocumentData.customer_id"></p-dropdown>
+        <app-validation propertyName="customer_id" [MessageArray]="PorpertyDocumentValidationMessages"
+          [FormGroupName]="PorpertyDocumentForm"></app-validation>
+      </div>
+      <div class="col-4 form-group">
+        <label>Address <span class="text-danger"> * </span></label>
+        <input type="text" class="form-control" formControlName="address" [(ngModel)]="PorpertyDocumentData.address"
+          aria-describedby="mail-icon">
+        <app-validation propertyName="address" [MessageArray]="PorpertyDocumentValidationMessages"
+          [FormGroupName]="PorpertyDocumentForm"></app-validation>
+      </div>
+      <div class="col-4 form-group">
+        <label>State <span class="text-danger"> * </span></label>
+        <p-dropdown [filter]="true" formControlName="state_id" [options]="Statedropdown" optionLabel="name"
+          optionValue="id" placeholder="Select State" [(ngModel)]="PorpertyDocumentData.state_id"
+          [ngClass]="getValClass(fc.state_id)" [(ngModel)]="this.PorpertyDocumentData.state_id"></p-dropdown>
+        <app-validation propertyName="state_id" [MessageArray]="PorpertyDocumentValidationMessages"
+          [FormGroupName]="PorpertyDocumentForm"></app-validation>
+      </div>
+      <div class="col-4 form-group">
+        <label>Pin Code <span class="text-danger"> * </span></label>
+        <input type="text" class="form-control" formControlName="zip_code" [(ngModel)]="PorpertyDocumentData.zip_code"
+          aria-describedby="mail-icon">
+        <app-validation propertyName="zip_code" [MessageArray]="PorpertyDocumentValidationMessages"
+          [FormGroupName]="PorpertyDocumentForm"></app-validation>
+      </div>
+      <div class="col-4 form-group">
+        <label>Staff <span class="text-danger"> * </span></label>
+        <p-dropdown [filter]="true" formControlName="staff_id" [options]="Staffdropdown" optionLabel="name"
+          optionValue="id" placeholder="Select Staff" [(ngModel)]="PorpertyDocumentData.staff_id"
+          [ngClass]="getValClass(fc.staff_id)" [(ngModel)]="this.PorpertyDocumentData.staff_id"></p-dropdown>
+        <app-validation propertyName="staff_id" [MessageArray]="PorpertyDocumentValidationMessages"
+          [FormGroupName]="PorpertyDocumentForm"></app-validation>
+      </div>
+
+
+    </div>
+  </div>
+  <div class="row align-items-center mb-2 mx-2">
+    <div class="col-md-6">
+      <span class="text-danger">*</span>&nbsp;<strong>Indicate mandatory fields</strong>
+    </div>
+    <div class="col-md-6 text-right">
+      <button type="button" class="btn btn-danger mr-3" routerLink="/PorpertyDocumentList">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle"
+          viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+        </svg>
+        <span class="align-middle ml-1">Cancel</span>
+      </button>
+      <button type="button" class="btn btn-success" (click)="Save()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-circle"
+          viewBox="0 0 16 16">
+          <path
+            d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z" />
+          <path
+            d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z" />
+        </svg>
+        <span class="align-middle ml-1">{{ PorpertyDocumentId == 0 ? 'Save': 'Update' }}</span>
+      </button>
+    </div>
+  </div>
+</div>
